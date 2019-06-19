@@ -32,6 +32,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .intro-holder img {
   width: 30%;
@@ -41,6 +45,19 @@
 .intro-holder.stop {
   animation: fadeOut 800ms linear;
   opacity: 0;
+}
+
+.interface {
+  opacity: 0;
+  visibility: hidden;
+}
+.interface.visible {
+  opacity: 1;
+  visibility: visible;
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
 body,

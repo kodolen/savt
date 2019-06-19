@@ -24,11 +24,19 @@ function startIntro(){
         timer++;
         if (timer >= 3){
             introHolder.classList.add('stop');
+            showInterface();
         }
         if (timer >= 5){
             container.removeChild(introHolder);
         }
     }, 1000)
 
+
+}
+
+function showInterface(){
+
+    let UI = document.querySelector('.interface');
+    UI.classList.add('visible');
 
 }
