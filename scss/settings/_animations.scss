@@ -13,3 +13,37 @@
   }
 
 }
+
+@keyframes fadeOut {
+
+  0% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+  }
+
+}
+
+@keyframes fillLeftToRight {
+
+  0% {
+
+    width: 0;
+    opacity: 0;
+
+  }
+
+  100% {
+
+    width: 30%;
+    opacity: 1;
+
+  }
+
+}

@@ -3,5 +3,24 @@
   width: 100%;
   height: 100%;
   background-color: purple;
+  animation: fadeIn 800ms linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+
+    width: 30%;
+    opacity: 1;
+    animation: 800ms fadeIn 800ms linear;
+
+  }
+
+  &.stop {
+
+    animation: fadeOut 800ms linear;
+    opacity: 0;
+
+  }
 
 }
