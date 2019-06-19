@@ -1,0 +1,14 @@
+{
+  "name": "savt-v0.2",
+  "version": "1.0.0",
+  "description": "SavT Dashboard",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lennart van Welzen",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.21.0"
+  }
+}
