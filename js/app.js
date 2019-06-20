@@ -1,6 +1,9 @@
 let timer = 0;
 
-let videoHolder = document.getElementById('video-holder');
+let leftSideBar = document.querySelector('.left-side-bar');
+let dropDown = document.querySelector('.drop-down');
+let closed = true;
+
 let v = document.createElement("VIDEO");
 
 
@@ -18,6 +21,23 @@ window.addEventListener('load', function () {
 
     // startIntro();
     showInterface();
+
+
+    // let dropDown = document.querySelector('.drop-down');
+    //
+    // dropDown.addEventListener('click', function(){
+    //     if(closed === true){
+    //         leftSideBar.classList.add('open');
+    //         closed = false;
+    //         console.log('open');
+    //     }
+    //     else {
+    //         leftSideBar.classList.remove('open');
+    //         closed = true;
+    //         console.log('close');
+    //     }
+    //
+    // });
 
 });
 
@@ -58,8 +78,10 @@ function showInterface() {
 function addDrones() {
 
     let drones = [];
-    let leftSideBar = document.querySelector('.left-side-bar');
     let videos = ["video/drone-pov-flood.mp4", false, false, false, false, false, false];
+    let leftSideBar = document.querySelector('.left-side-bar');
+
+    addDropDown(leftSideBar);
 
     for (let i = 0; i <= 7; i++) {
         let drone = {
@@ -173,6 +195,36 @@ function drawVideo(videoURL){
             console.log("sorry");
         }
         document.body.appendChild(v);
+        v.currentTime = 42;
+        v.controls = false;
+        v.play();
+        v.addEventListener("timeupdate", function(){
+            if (this.currentTime >= 58){
+                this.pause();
+            }
+        });
     }
 
+}
+
+function addDropDown(){
+
+    let dropDown = document.querySelector('.drop-down');
+    let body = document.querySelector("body");
+
+    dropDown.addEventListener('click', function(){
+        if(closed === true){
+            body.classList.add('open');
+            body.classList.remove('closed');
+            closed = false;
+            console.log('open');
+        }
+        else {
+            body.classList.add('closed');
+            body.classList.remove('open');
+            closed = true;
+            console.log('close');
+        }
+
+    });
 }

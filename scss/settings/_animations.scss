@@ -47,3 +47,35 @@
   }
 
 }
+
+@keyframes dropDown {
+
+  0% {
+
+    top: -400px;
+
+  }
+
+  100% {
+
+    top: 60px;
+
+  }
+
+}
+
+@keyframes dropBack {
+
+  0% {
+
+    top: 60px;
+
+  }
+
+  100% {
+
+    top: -400px;
+
+  }
+
+}

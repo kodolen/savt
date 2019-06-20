@@ -17,9 +17,11 @@
 
     position: absolute;
     left: 0;
-    top: 0;
+    top: -460px;
+    width: 360px;
+    height: 400px;
+    overflow: scroll;
     background-color: #343434;
-    padding: 12px;
     font-size: 12px;
 
     .drone-card {
@@ -29,10 +31,12 @@
       flex-direction: row;
       color: white;
       padding: 24px 0;
+      margin-left: 12px;
+      cursor: pointer;
 
       img {
 
-        padding-right: 12px;
+        margin-right: 12px;
 
       }
 
@@ -40,7 +44,7 @@
 
         display: flex;
         flex-direction: column;
-        padding-right: 48px;
+        margin-right: 48px;
 
       }
 
@@ -48,7 +52,7 @@
 
         display: flex;
         flex-direction: column;
-        padding-right: 24px;
+        margin-right: 24px;
 
 
       }
@@ -57,7 +61,7 @@
 
         display: flex;
         flex-direction: column;
-        padding-right: 24px;
+        margin-right: 24px;
 
 
       }
@@ -76,6 +80,23 @@
 
 }
 
+.drop-down {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: #343434;
+  height: 60px;
+  width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+
+}
+
 .video-drone {
 
   position: absolute;
@@ -84,5 +105,25 @@
   z-index: -1;
   top: 0;
   left: 0;
+
+}
+
+.open {
+
+  .left-side-bar {
+
+      animation: dropDown 800ms forwards;
+
+  }
+
+}
+
+.closed {
+
+  .left-side-bar {
+
+    animation: dropBack 800ms forwards;
+
+  }
 
 }
