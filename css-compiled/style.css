@@ -325,6 +325,20 @@
   animation: dropBack 800ms forwards;
 }
 
+.time {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #343434;
+  border-radius: 0 0 0 50px;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: center;
+}
+
 .warning {
   width: 220px;
   background-color: #6f618c;

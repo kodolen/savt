@@ -43,6 +43,11 @@ function showInterface() {
     let UI = document.querySelector('.interface');
     UI.classList.add('visible');
 
+    let date = new Date();
+    let timeHolder = document.querySelector('.time');
+    timeHolder.innerHTML = "" + date.getHours() + ":" + date.getMinutes();
+
+
     addDrones();
 
 }
