@@ -40,6 +40,17 @@
     top: -400px;
   }
 }
+@keyframes alt {
+  0% {
+    bottom: 50px;
+  }
+  40% {
+    bottom: 60px;
+  }
+  100% {
+    bottom: 130px;
+  }
+}
 .intro-holder {
   width: 100%;
   height: 100%;
@@ -115,6 +126,138 @@
   width: 100%;
   height: 20px;
   background-color: #565656;
+}
+.interface .bottom-bar {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  background-color: #343434;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  border-radius: 50px 50px 0 0;
+}
+.interface .bottom-bar .no {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+  border-right: 1px solid white;
+}
+.interface .bottom-bar .no span {
+  padding-top: 12px;
+}
+.interface .bottom-bar .alt-wrapper {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid white;
+}
+.interface .bottom-bar .alt-wrapper .altitude {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.interface .bottom-bar .alt-wrapper .altitude .drone-icon {
+  padding: 0;
+  position: absolute;
+  left: -24px;
+  bottom: 50px;
+}
+.interface .bottom-bar .alt-wrapper .altitude .alt-info {
+  padding: 0 0 0 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.interface .bottom-bar .alt-wrapper .altitude .alt-info span {
+  padding: 6px 0;
+  font-size: 12px;
+}
+.interface .bottom-bar .alt-wrapper .altitude .alt-info span:nth-child(2) {
+  font-weight: 800;
+  font-size: 20px;
+}
+.interface .bottom-bar .info-board {
+  height: 100%;
+  color: white;
+  width: 45%;
+  font-size: 12px;
+  border-right: 1px solid white;
+}
+.interface .bottom-bar .info-board .info-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50%;
+  padding: 0 60px;
+  border-bottom: 1px solid white;
+}
+.interface .bottom-bar .info-board .info-up span {
+  display: flex;
+  align-items: center;
+}
+.interface .bottom-bar .info-board .info-down {
+  height: 50%;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.interface .bottom-bar .info-board .info-down .wrapper {
+  display: flex;
+  align-items: center;
+}
+.interface .bottom-bar .info-board .bat,
+.interface .bottom-bar .info-board .speed,
+.interface .bottom-bar .info-board .scanned,
+.interface .bottom-bar .info-board .lat,
+.interface .bottom-bar .info-board .long {
+  font-weight: 600;
+  font-size: 20px;
+}
+.interface .bottom-bar .task-board {
+  width: 25%;
+  height: 100%;
+  position: relative;
+}
+.interface .bottom-bar .task-board .task-title {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  font-size: 12px;
+}
+.interface .bottom-bar .task-board .list {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 24px;
+}
+.interface .bottom-bar .task-board .list .task {
+  width: 60%;
+  height: 48px;
+  background-color: #636363;
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.interface .bottom-bar .task-board .list .task span {
+  padding-left: 24px;
+}
+
+.show-alt .drone-icon {
+  animation: alt 16s forwards;
 }
 
 .drop-down {

@@ -1,44 +1,15 @@
 let timer = 0;
-
-let leftSideBar = document.querySelector('.left-side-bar');
-let dropDown = document.querySelector('.drop-down');
 let closed = true;
-
 let v = document.createElement("VIDEO");
-
-
 v.setAttribute("width", "100%");
 v.setAttribute("height", "100%");
 v.setAttribute("controls", "controls");
 v.setAttribute("class", "video-drone");
-
 let container = document.getElementById("container");
 
-
 window.addEventListener('load', function () {
-
-    console.log("script active");
-
     // startIntro();
     showInterface();
-
-
-    // let dropDown = document.querySelector('.drop-down');
-    //
-    // dropDown.addEventListener('click', function(){
-    //     if(closed === true){
-    //         leftSideBar.classList.add('open');
-    //         closed = false;
-    //         console.log('open');
-    //     }
-    //     else {
-    //         leftSideBar.classList.remove('open');
-    //         closed = true;
-    //         console.log('close');
-    //     }
-    //
-    // });
-
 });
 
 
@@ -78,7 +49,7 @@ function showInterface() {
 function addDrones() {
 
     let drones = [];
-    let videos = ["video/drone-pov-flood.mp4", false, false, false, false, false, false];
+    let videos = ["video/drone-pov-flood.mp4", false, false, false, false, false, false, false];
     let leftSideBar = document.querySelector('.left-side-bar');
 
     addDropDown(leftSideBar);
@@ -148,6 +119,8 @@ function addDrones() {
 
         droneCard.addEventListener('click', function () {
 
+            // appendToDashboard(drones[i]);
+
             const modes = document.querySelectorAll('.mode');
 
             for (let i = 0; i <= modes.length; i++) {
@@ -161,7 +134,10 @@ function addDrones() {
 
             drones[i].mode = true;
             mode.innerHTML = "Override";
+
             console.log(drones[i]);
+            let drone = drones[i];
+            appendToDashboard(drone);
 
 
             let videoURL = drones[i].video;
@@ -183,9 +159,13 @@ function addDrones() {
 
 function drawVideo(videoURL){
 
+    let droneAlt = document.querySelector('body');
+
     if(videoURL === false){
         console.log("no video founded");
         document.body.removeChild(v);
+        droneAlt.classList.remove('show-alt');
+        droneAlt.classList.add('hide-alt');
     }
     else {
 
@@ -203,6 +183,9 @@ function drawVideo(videoURL){
                 this.pause();
             }
         });
+
+        droneAlt.classList.remove('hide-alt');
+        droneAlt.classList.add('show-alt');
     }
 
 }
@@ -227,4 +210,54 @@ function addDropDown(){
         }
 
     });
+}
+
+function appendToDashboard(drone){
+
+    let battery = document.querySelector('.bat');
+    battery.innerHTML = "" + drone.battery;
+
+    let speed = document.querySelector('.speed');
+    speed.innerHTML = " ";
+    let speedPercentage = 16;
+
+    let scanned = document.querySelector('.scanned');
+    scanned.innerHTML = " " + drone.scanned;
+
+    let latValue = 32.78306;
+    let lat = document.querySelector('.lat');
+    lat.innerHTML = " " + latValue;
+
+    let longValue = -96.80667;
+    let long = document.querySelector('.long');
+    long.innerHTML = "   " + longValue;
+
+    let tasks = document.querySelector('.tasks');
+    tasks.innerHTML = "0";
+
+    let list = document.querySelector('.list');
+    let task = document.createElement('div');
+    task.classList.add('task');
+    let taskText = document.createElement('span');
+    taskText.innerHTML = "List is empty";
+    task.appendChild(taskText);
+    list.appendChild(task);
+
+
+    let interval = setInterval(function(){
+
+        timer++;
+
+        if (timer >= 16){
+            clearInterval(interval);
+            timer = 0;
+        }
+        else {
+            speed.innerHTML = speedPercentage += Math.floor(Math.random() * 2) + 1  ;
+        }
+
+    }, 1000);
+
+    console.log(drone)
+
 }
