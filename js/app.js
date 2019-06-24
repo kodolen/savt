@@ -105,6 +105,12 @@ function addDrones() {
         let notes = document.createElement('div');
         notes.classList.add('notes');
 
+        let notesTitle = document.createElement('span');
+        notesTitle.innerHTML = "Notes:";
+
+        let noteText = document.createElement('span');
+        noteText.innerHTML = "No victims";
+
         droneCard.appendChild(icon);
         droneCard.appendChild(info);
         info.appendChild(droneNumber);
@@ -148,6 +154,8 @@ function addDrones() {
         });
 
         leftSideBar.appendChild(droneCard);
+        notes.appendChild(notesTitle);
+        notes.appendChild(noteText);
         leftSideBar.appendChild(notes);
 
     }
