@@ -48,7 +48,15 @@
     bottom: 60px;
   }
   100% {
-    bottom: 130px;
+    bottom: 110px;
+  }
+}
+@keyframes botToTop {
+  0% {
+    bottom: -160px;
+  }
+  100% {
+    bottom: 0;
   }
 }
 .intro-holder {
@@ -98,6 +106,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  z-index: 99;
 }
 .interface .left-side-bar .overlay {
   width: 100%;
@@ -161,7 +170,7 @@
   position: absolute;
   width: 100%;
   height: 160px;
-  bottom: 0;
+  bottom: -160px;
   left: 0;
   background-color: #343434;
   display: flex;
@@ -179,6 +188,7 @@
   color: white;
   position: relative;
   border-right: 1px solid white;
+  z-index: 99;
 }
 .interface .bottom-bar .no span {
   padding-top: 12px;
@@ -304,8 +314,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 2;
   border-bottom: 1px solid white;
+  z-index: 99;
 }
 
 .video-drone {
@@ -337,6 +347,56 @@
   align-items: center;
   width: 140px;
   justify-content: center;
+}
+
+.show-bottom .bottom-bar {
+  animation: botToTop 600ms forwards;
+}
+
+.map {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 52px;
+  right: 16px;
+  background-color: #343434;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 99;
+}
+.map img {
+  width: 60%;
+}
+
+.map-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 98;
+}
+.map-wrapper #map {
+  opacity: 0;
+  visibility: hidden;
+  height: 80%;
+  width: 80%;
+}
+
+.show-map #map {
+  animation: fadeIn 600ms forwards;
+  visibility: visible;
+}
+
+.hide-map #map {
+  animation: fadeOut 600ms forwards;
+  visibility: hidden;
 }
 
 .warning {

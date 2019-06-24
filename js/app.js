@@ -11,30 +11,12 @@ let taskList = true;
 window.addEventListener('load', function () {
     // startIntro();
     showInterface();
+    showMap();
+
 });
 
 
 function startIntro() {
-
-    let introHolder = document.createElement('div');
-    introHolder.className = "intro-holder";
-    let logo = document.createElement('img');
-    logo.src = 'images/savt-logo.png';
-
-    introHolder.appendChild(logo);
-    container.appendChild(introHolder);
-
-    setInterval(function () {
-        timer++;
-        if (timer >= 3) {
-            introHolder.classList.add('stop');
-            showInterface();
-        }
-        if (timer >= 5) {
-            container.removeChild(introHolder);
-        }
-    }, 1000)
-
 
 }
 
@@ -228,6 +210,8 @@ function addDropDown(){
 
 function appendToDashboard(drone){
 
+    document.body.classList.add('show-bottom');
+
     let battery = document.querySelector('.bat');
     battery.innerHTML = "" + drone.battery;
 
@@ -325,6 +309,53 @@ function drawWarnings(task, taskText, list, tasks){
 
     }
 
+}
 
+let map;
+let marker = [];
+
+let defaultCenter = {
+    lat: 52.867452,
+    lng: 6.190950
+};
+
+
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 51.611388, lng: 3.891118},
+        zoom: 10
+    });
+}
+
+let mapOpen = false;
+
+function showMap(){
+
+    let button = document.querySelector('.map');
+    button.addEventListener('click', function(){
+
+        if (mapOpen === false){
+            document.body.classList.add('show-map');
+            document.body.classList.remove('hide-map');
+            mapOpen = true;
+        }
+        else {
+            document.body.classList.remove('show-map');
+            document.body.classList.add('hide-map');
+            mapOpen = false;
+        }
+
+    })
+
+}
+
+function addMarker() {
+
+    marker = new google.maps.Marker({
+        position: defaultCenter,
+        map: map,
+        draggable: true,
+    });
 
 }
