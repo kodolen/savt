@@ -6,6 +6,7 @@ v.setAttribute("height", "100%");
 v.setAttribute("controls", "controls");
 v.setAttribute("class", "video-drone");
 let container = document.getElementById("container");
+let taskList = true;
 
 window.addEventListener('load', function () {
     // startIntro();
@@ -248,16 +249,21 @@ function appendToDashboard(drone){
     task.classList.add('task');
     let taskText = document.createElement('span');
     taskText.innerHTML = "List is empty";
-    task.appendChild(taskText);
-    list.appendChild(task);
+
+    if (taskList === true) {
+        task.appendChild(taskText);
+        list.appendChild(task);
+        taskList = false;
+    }
 
 
     let interval = setInterval(function(){
 
         timer++;
 
-        if (timer >= 16){
+        if (timer >= 1){
             clearInterval(interval);
+            drawWarnings(task, taskText, list, tasks);
             timer = 0;
         }
         else {
@@ -267,5 +273,53 @@ function appendToDashboard(drone){
     }, 1000);
 
     console.log(drone)
+
+}
+
+function drawWarnings(task, taskText, list, tasks){
+
+    let text = ['Identify subject.', 'Check status victim and report'];
+    task.removeChild(taskText);
+    list.removeChild(task);
+
+    for (let i = 0; i <= 1; i++){
+        let task = document.createElement('div');
+        task.classList.add('task');
+        let taskText = document.createElement('span');
+        taskText.innerHTML = text[i];
+        task.appendChild(taskText);
+        list.appendChild(task);
+        tasks.innerHTML = "2";
+
+        let warning = document.createElement('div');
+        warning.classList.add('warning');
+        let header = document.createElement('h2');
+        let status = document.createElement('span');
+        let image = document.createElement('img');
+        let cta = document.createElement('div');
+        cta.className = "cta";
+        let pinpoint = document.createElement('span');
+
+        header.innerHTML = "Human";
+        status.innerHTML = "Satus: SAFE";
+        image.src = "images/thermal-person.png";
+        pinpoint.innerHTML = "Check pinpoint";
+
+        warning.appendChild(header);
+        warning.appendChild(status);
+        warning.appendChild(image);
+        warning.appendChild(cta);
+        cta.appendChild(pinpoint);
+
+        if(i === 0) {
+            header.innerHTML = "Unidentified";
+            status.innerHTML = "Satus: NEED TO CHECK";
+        }
+
+        document.body.appendChild(warning);
+
+    }
+
+
 
 }
