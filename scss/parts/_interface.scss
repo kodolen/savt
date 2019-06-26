@@ -27,7 +27,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    z-index: 99;
+    z-index: 97;
 
     .overlay {
 
@@ -335,7 +335,7 @@
   justify-content: center;
   cursor: pointer;
   border-bottom: 1px solid white;
-  z-index: 99;
+  z-index: 98;
 
 }
 
@@ -410,7 +410,7 @@
   align-items: center;
   cursor: pointer;
   border-radius: 10px;
-  z-index: 99;
+  z-index: 98;
 
   img {
 
@@ -430,7 +430,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 98;
+  z-index: 97;
 
   #map {
 
@@ -460,6 +460,70 @@
 
     animation: fadeOut 600ms forwards;
     visibility: hidden;
+
+  }
+
+}
+
+.pod-background {
+
+  width: 100%;
+  height: 100vh;
+  background-color: rebeccapurple;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .save-button {
+
+    width: 120px;
+    height: 40px;
+    background-color: grey;
+
+  }
+
+}
+
+.intro {
+
+  width: 100%;
+  height: 100vh;
+  background-color: rebeccapurple;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+
+    animation: fadeIn 3000ms forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+
+      width: 30%;
+
+    }
+
+  }
+
+}
+
+.hide-intro {
+
+  .intro {
+
+    animation: fadeOutLogo 2600ms forwards;
 
   }
 

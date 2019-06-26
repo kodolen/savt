@@ -9,7 +9,15 @@ let container = document.getElementById("container");
 let taskList = true;
 
 window.addEventListener('load', function () {
-    // startIntro();
+
+
+    setInterval(function(){
+        timer++;
+        if(timer === 3){
+            document.body.classList.add('hide-intro');
+        }
+    }, 1000);
+
     showInterface();
     showMap();
 
@@ -287,6 +295,9 @@ function drawWarnings(task, taskText, list, tasks){
         let image = document.createElement('img');
         let cta = document.createElement('div');
         cta.className = "cta";
+        cta.addEventListener('click', function(){
+           dropPod();
+        });
         let pinpoint = document.createElement('span');
 
         header.innerHTML = "Human";
@@ -322,10 +333,39 @@ let defaultCenter = {
 
 
 function initMap() {
+
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 51.611388, lng: 3.891118},
-        zoom: 10
+        zoom: 10,
+        mapTypeId: "satellite"
     });
+
+    let markerPos = {
+
+        "coords": [
+            {lat: 51.543336, lng: 3.461338},
+            {lat: 51.587616, lng: 3.665439},
+            {lat: 51.719571, lng: 3.695344}]
+
+    };
+
+    for (i = 0; i < markerPos.coords.length; i++) {
+
+        marker[i] = new google.maps.Marker({
+            position: markerPos.coords[i],
+            map: map,
+            title: 'Hello World!'
+        });
+
+        marker[i].addListener('click', function () {
+            console.log('click')
+        });
+
+        marker[i].setMap(map);
+
+    }
+
+
 }
 
 let mapOpen = false;
@@ -350,12 +390,18 @@ function showMap(){
 
 }
 
-function addMarker() {
+function dropPod(){
 
-    marker = new google.maps.Marker({
-        position: defaultCenter,
-        map: map,
-        draggable: true,
+    let podBackground = document.createElement('div');
+    podBackground.classList.add('pod-background');
+
+    let saveButton = document.createElement('div');
+    saveButton.classList.add('save-button');
+    saveButton.addEventListener('click', function(){
+        document.body.removeChild(podBackground);
     });
+
+    podBackground.appendChild(saveButton);
+    document.body.appendChild(podBackground);
 
 }

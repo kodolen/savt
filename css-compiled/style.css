@@ -14,6 +14,16 @@
     opacity: 0;
   }
 }
+@keyframes fadeOutLogo {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 @keyframes fillLeftToRight {
   0% {
     width: 0;
@@ -106,7 +116,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: 99;
+  z-index: 97;
 }
 .interface .left-side-bar .overlay {
   width: 100%;
@@ -315,7 +325,7 @@
   justify-content: center;
   cursor: pointer;
   border-bottom: 1px solid white;
-  z-index: 99;
+  z-index: 98;
 }
 
 .video-drone {
@@ -365,7 +375,7 @@
   align-items: center;
   cursor: pointer;
   border-radius: 10px;
-  z-index: 99;
+  z-index: 98;
 }
 .map img {
   width: 60%;
@@ -380,7 +390,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 98;
+  z-index: 97;
 }
 .map-wrapper #map {
   opacity: 0;
@@ -397,6 +407,51 @@
 .hide-map #map {
   animation: fadeOut 600ms forwards;
   visibility: hidden;
+}
+
+.pod-background {
+  width: 100%;
+  height: 100vh;
+  background-color: rebeccapurple;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pod-background .save-button {
+  width: 120px;
+  height: 40px;
+  background-color: grey;
+}
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  background-color: rebeccapurple;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro .logo {
+  animation: fadeIn 3000ms forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro .logo img {
+  width: 30%;
+}
+
+.hide-intro .intro {
+  animation: fadeOutLogo 2600ms forwards;
 }
 
 .warning {
