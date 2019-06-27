@@ -317,6 +317,7 @@ function drawWarnings(task, taskText, list, tasks){
         if(i === 0) {
             header.innerHTML = "Unidentified";
             status.innerHTML = "Satus: NEED TO CHECK";
+            image.src = "images/heatpic.png";
         }
 
         document.body.appendChild(warning);

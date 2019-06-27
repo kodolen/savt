@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41b7655a-e3a6-486e-ab03-8efb7f7d694c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/audio-help.aac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/audio-help.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/waveform.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/heatpic.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css-compiled/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css-compiled/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css-compiled/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css-compiled/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/parts/_interface.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/parts/_interface.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="263" column="23" selection-start-line="263" selection-start-column="23" selection-end-line="263" selection-end-column="23" />
+            <state relative-caret-position="240">
+              <caret line="264" column="36" lean-forward="true" selection-start-line="264" selection-start-column="36" selection-end-line="264" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -81,6 +75,8 @@
       <find>marker</find>
       <find>save</find>
       <find>video</find>
+      <find>warn</find>
+      <find>warnings</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -196,16 +192,15 @@
       <workItem from="1560670942286" duration="1943000" />
       <workItem from="1560840575420" duration="50525000" />
       <workItem from="1561396600008" duration="4690000" />
-      <workItem from="1561627197163" duration="5923000" />
+      <workItem from="1561627197163" duration="7161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63081000" />
+    <option name="totallyTimeSpent" value="64319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -293,8 +288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="263" column="23" selection-start-line="263" selection-start-column="23" selection-end-line="263" selection-end-column="23" />
+        <state relative-caret-position="240">
+          <caret line="264" column="36" lean-forward="true" selection-start-line="264" selection-start-column="36" selection-end-line="264" selection-end-column="36" />
         </state>
       </provider>
     </entry>
