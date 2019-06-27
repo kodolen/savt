@@ -423,9 +423,10 @@
   justify-content: center;
 }
 .pod-background .save-button {
-  width: 120px;
-  height: 40px;
+  padding: 12px 40px;
   background-color: grey;
+  color: white;
+  margin-top: 20px;
 }
 
 .intro {
@@ -452,6 +453,24 @@
 
 .hide-intro .intro {
   animation: fadeOutLogo 2600ms forwards;
+}
+
+.landings {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.hide-warnings .warning {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .warning {
